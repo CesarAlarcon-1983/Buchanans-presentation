@@ -15,12 +15,17 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
     font-family: $mainFont;
     font-weight: 300;
     overflow-x: hidden;
-    width: 100vw;
+    width: 100%;
     font-size: $sm;
+    height: 100%;
 }
 
 a {

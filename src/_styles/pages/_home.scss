@@ -1,3 +1,101 @@
-.home {
+.intro {
+
+    $h: &;
+
+    height: 100%;
+    overflow: hidden;
+    display: flex;
     
+    &__brand-power,
+    &__home-tester-club {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &:hover {
+            #{$h}__background {
+                filter: grayscale(0);
+
+                img {
+                    opacity: 1;
+                    transform: translate3d(-50%, -50%, 0) scale3d(1.02, 1.02, 1.02);
+                }
+            }
+        }
+    }
+    
+    &__background {
+        @include trans;
+
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: $black;
+
+        filter: grayscale(50%);
+        
+        // &:after {
+        //     content: '';
+
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0;
+        // }
+        
+        img {
+            @include trans;
+            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            opacity: .5;
+        }
+
+        &--brand-power {
+            img {
+                top: 45%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        &--home-tester-club {
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+
+    &__brand {
+        z-index: 2;
+        width: 40%;
+        padding-top: 10%;
+    }
+
+    &__logo {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__slogan {
+        color: $white;
+        text-align: center;
+        font-size: rem(16px);
+        margin: 0;
+    }
 }
