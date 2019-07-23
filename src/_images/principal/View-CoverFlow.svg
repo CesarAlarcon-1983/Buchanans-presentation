@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="66.32" height="42" viewBox="0 0 66.32 42">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="66.32" height="42" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="View_CoverFlow" data-name="View/CoverFlow" clip-path="url(#clip-path)">
+    <g id="View_CoverFlow-2" data-name="View/CoverFlow" transform="translate(0 1)">
+      <path id="Stroke_2" data-name="Stroke 2" d="M0,40H38.931V0H0Z" transform="translate(13.695)" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_4" data-name="Stroke 4" d="M.5,0V29.368" transform="translate(6.714 5.128)" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_5" data-name="Stroke 5" d="M.5,0V21.129" transform="translate(0.5 9.247)" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_7" data-name="Stroke 7" d="M.5,29.368V0" transform="translate(58.607 5.128)" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_8" data-name="Stroke 8" d="M.5,21.129V0" transform="translate(64.82 9.247)" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

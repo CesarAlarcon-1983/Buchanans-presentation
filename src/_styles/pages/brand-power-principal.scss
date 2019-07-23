@@ -1,0 +1,147 @@
+.brand-power-principal {
+    background: $black;
+    width: 100%;
+    position: relative;
+    padding: rem(120px) rem(120px) 0;
+
+    &__header {
+        $h: &;
+
+        position: fixed;
+        background: $black;
+        width: 100%;
+        top: 0;
+        left: 0;
+        min-height: rem(120px);
+        height: 4%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        padding: rem(40px);
+
+        &__heading {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            // flex-shrink: 0;
+        }
+
+        &__back-arrow {
+            height: 100%;
+            margin-right: 40px;
+        }
+
+        &__selected-country {
+            font-size: rem(40px);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.7px;
+            color: $red;
+            white-space: nowrap;
+            
+            @include customMq(1200px, 1600px) {
+                font-size: 30px;
+            }
+        }
+
+        &__controls {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+
+        &__controls-group {
+            height: 100%;
+            width: rem(168px);
+            margin-left: rem(20px);
+
+            &--filter {
+                width: rem(112px);
+            }
+
+            &--single-icon {
+                width: auto;
+                margin-left: 35px;
+                height: 100%;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+
+        &__bp-sort-checkbox,
+        &__medifact-sort-checkbox,
+        &__other-sort-checkbox {
+            position: absolute;
+            left: -9999px;
+
+            &:checked + label {
+                background: $altGray;
+
+                #{$h}__plus-icon {
+                    display: none;
+                }
+
+                #{$h}__check-icon {
+                    display: block;
+                }
+            }
+        }
+
+        &__bp-sort-label,
+        &__medifact-sort-label,
+        &__other-sort-label {
+            display: block;
+            background: $red;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            padding: 0 rem(14px);
+            text-transform: uppercase;
+            color: $white;
+            font-weight: 900;
+            font-size: rem(14px);
+            border-radius: 5px;
+            position: relative;
+
+            i {
+                font-size: 18px;
+                font-weight: 100;
+            }
+
+            img {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                pointer-events: none;
+            }
+
+            #{$h}__plus-icon {
+                display: block;
+            }
+
+            #{$h}__check-icon {
+                display: none;
+            }
+        }
+    }
+
+    &__products-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &__col {
+        width: calc(33.3% - 20px);
+        margin-bottom: rem(40px);
+    }
+}

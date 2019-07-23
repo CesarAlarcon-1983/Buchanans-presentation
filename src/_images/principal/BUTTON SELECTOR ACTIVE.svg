@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="168" height="40" viewBox="0 0 168 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="168" height="40" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect width="17.012" height="17.012" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="BUTTON_SELECTOR_ACTIVE" data-name="BUTTON SELECTOR ACTIVE" clip-path="url(#clip-path)">
+    <g id="BUTTON_SELECTOR_INACTIVE" data-name="BUTTON SELECTOR INACTIVE">
+      <rect id="Button_Rectangle_Grey" data-name="Button Rectangle Grey" width="168" height="40" rx="5" fill="#ec2024"/>
+      <text id="BRAND_POWER" data-name="BRAND POWER" transform="translate(14)" fill="#fff" font-size="14" font-family="SofiaProBlack, Sofia Pro" letter-spacing="0.071em"><tspan x="0" y="11">MEDIFACTS</tspan></text>
+      <g id="_icon" data-name="+ icon" transform="translate(142 12)" clip-path="url(#clip-path-2)">
+        <g id="_" data-name="+" transform="translate(1 1)">
+          <path id="Stroke_1" data-name="Stroke 1" d="M.5,0V15.012" transform="translate(7.006 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+          <path id="Stroke_3" data-name="Stroke 3" d="M15.012.5H0" transform="translate(0 7.006)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

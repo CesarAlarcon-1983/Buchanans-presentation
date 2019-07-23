@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="40" viewBox="0 0 50 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="50" height="40" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Clip_10" data-name="Clip 10" d="M0,0H5.316V5.316H0Z" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="Clip_13" data-name="Clip 13" d="M0,0H5.316V5.316H0Z" transform="translate(0 0.562)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <path id="Clip_16" data-name="Clip 16" d="M0,0H5.316V5.316H0Z" transform="translate(0 0.123)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-5">
+      <path id="Clip_19" data-name="Clip 19" d="M0,0H5.316V5.316H0Z" transform="translate(0 0.684)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="View_List" data-name="View/List" clip-path="url(#clip-path)">
+    <g id="View_List-2" data-name="View/List">
+      <path id="Stroke_1" data-name="Stroke 1" d="M0,.5H37.285" transform="translate(11.715 2.158)" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_3" data-name="Stroke 3" d="M0,.5H37.285" transform="translate(11.715 13.719)" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_5" data-name="Stroke 5" d="M0,.5H37.285" transform="translate(11.715 25.281)" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_7" data-name="Stroke 7" d="M0,.5H37.285" transform="translate(11.715 36.842)" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <g id="Group_11" data-name="Group 11">
+        <path id="Clip_10-2" data-name="Clip 10" d="M0,0H5.316V5.316H0Z" fill="none"/>
+        <g id="Group_11-2" data-name="Group 11" clip-path="url(#clip-path-2)">
+          <path id="Fill_9" data-name="Fill 9" d="M2.658,5.316A2.658,2.658,0,1,1,5.316,2.658,2.658,2.658,0,0,1,2.658,5.316" transform="translate(0)" fill="#ec2024"/>
+        </g>
+      </g>
+      <g id="Group_14" data-name="Group 14" transform="translate(0 11)">
+        <path id="Clip_13-2" data-name="Clip 13" d="M0,0H5.316V5.316H0Z" transform="translate(0 0.562)" fill="none"/>
+        <g id="Group_14-2" data-name="Group 14" clip-path="url(#clip-path-3)">
+          <path id="Fill_12" data-name="Fill 12" d="M2.658,5.316A2.658,2.658,0,1,1,5.316,2.658,2.658,2.658,0,0,1,2.658,5.316" transform="translate(0 0.562)" fill="#ec2024"/>
+        </g>
+      </g>
+      <g id="Group_17" data-name="Group 17" transform="translate(0 23)">
+        <path id="Clip_16-2" data-name="Clip 16" d="M0,0H5.316V5.316H0Z" transform="translate(0 0.123)" fill="none"/>
+        <g id="Group_17-2" data-name="Group 17" clip-path="url(#clip-path-4)">
+          <path id="Fill_15" data-name="Fill 15" d="M2.658,5.316A2.658,2.658,0,1,1,5.316,2.658,2.658,2.658,0,0,1,2.658,5.316" transform="translate(0 0.123)" fill="#ec2024"/>
+        </g>
+      </g>
+      <g id="Group_20" data-name="Group 20" transform="translate(0 34)">
+        <path id="Clip_19-2" data-name="Clip 19" d="M0,0H5.316V5.316H0Z" transform="translate(0 0.684)" fill="none"/>
+        <g id="Group_20-2" data-name="Group 20" clip-path="url(#clip-path-5)">
+          <path id="Fill_18" data-name="Fill 18" d="M2.658,5.316A2.658,2.658,0,1,1,5.316,2.658,2.658,2.658,0,0,1,2.658,5.316" transform="translate(0 0.684)" fill="#ec2024"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

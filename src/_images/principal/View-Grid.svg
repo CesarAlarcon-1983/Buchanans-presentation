@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57.803" height="42" viewBox="0 0 57.803 42">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="57.803" height="42" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="View_Grid" data-name="View/Grid" clip-path="url(#clip-path)">
+    <g id="View_Grid-2" data-name="View/Grid" transform="translate(1 1)">
+      <path id="Stroke_1" data-name="Stroke 1" d="M0,17.38H25.366V0H0Z" fill="none" stroke="#4a4a4a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_3" data-name="Stroke 3" d="M0,17.38H25.366V0H0Z" transform="translate(30.437)" fill="none" stroke="#4a4a4a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_4" data-name="Stroke 4" d="M0,17.38H25.366V0H0Z" transform="translate(0 22.62)" fill="none" stroke="#4a4a4a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_5" data-name="Stroke 5" d="M0,17.38H25.366V0H0Z" transform="translate(30.437 22.62)" fill="none" stroke="#4a4a4a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

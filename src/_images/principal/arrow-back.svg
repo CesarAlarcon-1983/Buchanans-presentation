@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g id="Back_Button" data-name="Back Button" transform="translate(1 1)">
+    <rect id="Back_Button_background" data-name="Back Button background" width="40" height="40" transform="translate(0 0)" fill="rgba(0,0,0,0)"/>
+    <g id="Back_Button-2" data-name="Back Button" transform="translate(0 0)">
+      <path id="Stroke_1" data-name="Stroke 1" d="M20,0,0,20,20,40" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_3" data-name="Stroke 3" d="M0,.5H40" transform="translate(0 19.501)" fill="none" stroke="#ec2024" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
