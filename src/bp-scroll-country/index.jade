@@ -1,0 +1,32 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+    header.brand-power-intro__header
+        .brand-power-intro__hamburguer  
+            img(src="/images/locations/hamburguer.svg")
+        a.brand-power-intro__logo(href="#")
+            img(src="/images/locations/bp-logo.png")
+    main.brand-power-intro
+        .brand-power-intro__country-selector
+            .brand-power-intro__controls
+                .brand-power-intro__arrow.brand-power-intro__arrow--up
+                    img(src="/images/locations/arrow-up.svg")
+                .brand-power-intro__arrow.brand-power-intro__arrow--down
+                    img(src="/images/locations/arrow-down.svg")
+                .brand-power-intro__arrow.brand-power-intro__arrow--right
+                    img(src="/images/locations/arrow-right.svg")
+            ul.brand-power-intro__country-index
+                li.brand-power-intro__item
+                    a.brand-power-intro__index(href="#")
+                        i.fa.fa-globe
+            .brand-power-intro__countries-list
+                .brand-power-intro__country.brand-power-intro__country--top
+                .brand-power-intro__country.brand-power-intro__country--next-top
+                .brand-power-intro__country.brand-power-intro__country--active
+                .brand-power-intro__country.brand-power-intro__country--next-bottom
+                .brand-power-intro__country.brand-power-intro__country--bottom
+                    
