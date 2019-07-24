@@ -1,20 +1,11 @@
 'use strict';
 
 // Constructor
-var CountrySelector = function() {
-
+const CountrySelector = function() {
     
-    var arrowUp = $('.brand-power-intro__arrow--up');
-    var arrowDown = $('.brand-power-intro__arrow--down');
-    var indexesContainer = $('.brand-power-intro__country-index');
-    var countriesContainer = $('.brand-power-intro__country');
-    var activeCountry = $('.brand-power-intro__country--active');
-    var nextCountryTop = $('.brand-power-intro__country--next-top');
-    var nextCountryBottom = $('.brand-power-intro__country--next-bottom');
-    var countryTop = $('.brand-power-intro__country--top');
-    var countryBottom = $('.brand-power-intro__country--bottom');
-
-    var countries = [
+    const controlsPrev = $('.brand-power-intro__control--prev');
+    const controlsNext = $('.brand-power-intro__control--next');
+    const countries = [
         'australia',
         'brazil',
         'canada HQ',
@@ -36,147 +27,117 @@ var CountrySelector = function() {
         'usa',
         'vietnam'
     ];
+    const newCountriesList = countries.slice();
+    newCountriesList.unshift('worldwide');
 
-    var countriesIndexes = [];
-
-    for(var i = 0; i < countries.length - 1; i++) {
-        var currentCountryInitial = countries[i].charAt(0);
-        var nextCountryInitial = countries[i + 1].charAt(0)
-
-        if(i === 0) {
-            countriesIndexes.push(currentCountryInitial);
-        }
-
-        if(currentCountryInitial !== nextCountryInitial) {
-            countriesIndexes.push(nextCountryInitial);
-        }
-    }
+    let activeCountryIndex = -2;
     
-    function countryValuesInit() {
-        var indexesHtmlStructure = countriesIndexes.map(function(element, index) {
-            return '<li class="brand-power-intro__item"><a href="#" class="brand-power-intro__index">' + element + '</a></li>';
+    function initializeCountrySelector() {        
+        buildCountriesIndexModule();
+        updateVisibleCountries();
+        setActiveIndex();
+    };
+    
+    function buildCountriesIndexModule() {
+        const indexesContainer = $('.brand-power-intro__country-index-list');
+        const countryIndexes = generateIndex(countries);
+
+        const indexesHtml = countryIndexes.map(function(countryIndex) {
+            return '<li class="brand-power-intro__country-index">' + countryIndex + '</li>';
         })
         
-        indexesContainer.append(indexesHtmlStructure);
-        setHtmlContent(activeCountry, 'worldwide');
-        setHtmlContent(nextCountryBottom, countries[0]);
-        setHtmlContent(countryBottom, countries[1]);
-        
-        var indexesList = $('.brand-power-intro__index');
-        
-        $(indexesList[0]).addClass('-active');
-    };
+        indexesContainer.append(indexesHtml);
+    }
     
+    function generateIndex(stringsArray) {
+        const index = stringsArray.map(function(string){
+            return string.charAt(0);
+        });
 
+        return [...new Set(index)];
+    }
 
-    arrowDown.on('click', function() {
-        var activeCountryIndex = getActiveCountryIndex();
-        var indexesList = $('.brand-power-intro__index');
-        var currentActiveCountryInitial = activeCountry.html().charAt(0); 
-        var nextCountryInitial = nextCountryBottom.html().charAt(0);
-        var currentActiveindex = indexesList.index($('.brand-power-intro__index.-active'));
+    function updateVisibleCountries() {
+        const countryContainers = $('.brand-power-intro__country');
 
-        if(currentActiveCountryInitial != nextCountryInitial && currentActiveindex < indexesList.length - 1) {
-            $(indexesList[currentActiveindex]).removeClass('-active');
-            $(indexesList[currentActiveindex + 1]).addClass('-active');
+        for (let i = 0; i < countryContainers.length; i++ ) {
+            const content = newCountriesList[(activeCountryIndex + i)] ? newCountriesList[(activeCountryIndex + i)] : '';
+
+            setHtmlContent(countryContainers.get(i), content);
         }
+    }
 
-        console.log(currentActiveCountryInitial);
-        console.log(currentActiveindex);
-
-        if(activeCountryIndex == 19) {
-            return
-        }
-
-        if(activeCountryIndex == -1) {
-            setHtmlContent(nextCountryTop, 'worldwide');
-            setHtmlContent(activeCountry, countries[activeCountryIndex + 1]);
-            setHtmlContent(nextCountryBottom, countries[activeCountryIndex + 2]);
-            setHtmlContent(countryBottom, countries[activeCountryIndex + 3]);
-        }
+    function setActiveIndex() {
+        const indexesList = $('.brand-power-intro__country-index');
+        const indexesListArray = indexesList.toArray();
+        const activeCountry = $('.brand-power-intro__country--main');
+        const activeCountryInitialLetter = activeCountry.html().charAt(0);
         
-        if(activeCountryIndex == 0) {
-            setHtmlContent(countryTop, 'worldwide');
-            setHtmlContent(nextCountryTop, countries[activeCountryIndex]);
-            setHtmlContent(activeCountry, countries[activeCountryIndex + 1]);
-            setHtmlContent(nextCountryBottom, countries[activeCountryIndex + 2]);
-            setHtmlContent(countryBottom, countries[activeCountryIndex + 3]);
+        const activeIndex = indexesListArray.findIndex(function(index) {
+            return $(index).html() === activeCountryInitialLetter;
+        });
+        
+        indexesList.removeClass('-active');
+
+        if (activeIndex >= 0) {
+            $(indexesList.get(activeIndex)).addClass('-active');
+        } else {
+            $(indexesList.get(0)).addClass('-active');
         }
+    }
 
-        if(activeCountryIndex > 0) {
-            setHtmlContent(countryTop, countries[activeCountryIndex - 1]);
-            setHtmlContent(nextCountryTop, countries[activeCountryIndex]);
-            setHtmlContent(activeCountry, countries[activeCountryIndex + 1]);
+    controlsNext.on('click', function() {        
+        const limit = activeCountryIndex + 3;
 
-            if(activeCountryIndex < countries.length - 2) {
-                setHtmlContent(nextCountryBottom, countries[activeCountryIndex + 2]);
-            } else {
-                setHtmlContent(nextCountryBottom, '');
-            }
-
-            if(activeCountryIndex < countries.length - 3) {
-                setHtmlContent(countryBottom, countries[activeCountryIndex + 3]);
-            } else {
-                setHtmlContent(countryBottom, '');
+        if (limit < newCountriesList.length) {
+            activeCountryIndex += 1;
+            
+            enableControls();
+            updateVisibleCountries();
+            setActiveIndex();
+            
+            if (limit === (newCountriesList.length - 1)) {
+                disableControls('next');
             }
         }
-    })
+    });
 
-    arrowUp.on('click', function() {
-        var activeCountryIndex = getActiveCountryIndex();
+    controlsPrev.on('click', function() {
+        const limit = -2;
 
-        var indexesList = $('.brand-power-intro__index');
-        var currentActiveCountryInitial = activeCountry.html().charAt(0); 
-        var nextCountryInitial = nextCountryTop.html().charAt(0);
-        var currentActiveindex = indexesList.index($('.brand-power-intro__index.-active'));
+        if (activeCountryIndex > limit) {
+            activeCountryIndex -= 1;
 
-        if(currentActiveCountryInitial != nextCountryInitial && currentActiveindex > 0) {
-            $(indexesList[currentActiveindex]).removeClass('-active');
-            $(indexesList[currentActiveindex - 1]).addClass('-active');
+            enableControls();
+            updateVisibleCountries();
+            setActiveIndex();
+            
+            if (activeCountryIndex === limit) {
+                disableControls('prev');
+            }
         }
-
-        console.log(currentActiveCountryInitial);
-        console.log(currentActiveindex);
-
-        if(activeCountryIndex == -1) {
-            return
-        }
-
-        if(activeCountryIndex == 0) {
-            setHtmlContent(nextCountryTop, '');            
-            setHtmlContent(activeCountry, 'worldwide');
-            setHtmlContent(nextCountryBottom, countries[activeCountryIndex]);
-            setHtmlContent(countryBottom, countries[activeCountryIndex + 1]);
-        }
-        
-        if(activeCountryIndex == 1) {
-            setHtmlContent(countryTop, '');
-            setHtmlContent(nextCountryTop, 'worldwide');
-            setHtmlContent(activeCountry, countries[activeCountryIndex - 1]);
-            setHtmlContent(nextCountryBottom, countries[activeCountryIndex]);
-            setHtmlContent(countryBottom, countries[activeCountryIndex + 1]);
-        }
-
-        if(activeCountryIndex > 1) {
-            setHtmlContent(countryTop, countries[activeCountryIndex - 3]);
-            setHtmlContent(nextCountryTop, countries[activeCountryIndex - 2]);
-            setHtmlContent(activeCountry, countries[activeCountryIndex - 1]);
-            setHtmlContent(nextCountryBottom, countries[activeCountryIndex]);
-            setHtmlContent(countryBottom, countries[activeCountryIndex + 1]);
-        }
-    })
+    });
 
     function setHtmlContent(element, content) {
-        element.html(content)
+        $(element).html(content);
     };
 
-    function getActiveCountryIndex() {
-        var activeCountryName = activeCountry.html();
-        var activeCountryIndex = countries.indexOf(activeCountryName);
-        return activeCountryIndex
-    };
+    function disableControls(type) {
+        if (type === 'next') {
+            controlsNext.addClass('-disabled');
+        }
 
-    countryValuesInit();
+        if (type === 'prev') {
+            controlsPrev.addClass('-disabled');
+        }
+    }
+
+    function enableControls() {
+        controlsNext.removeClass('-disabled');
+        controlsPrev.removeClass('-disabled');
+    }
+
+    initializeCountrySelector();
 };
 
 module.exports = CountrySelector;

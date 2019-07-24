@@ -1,0 +1,34 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+    header.brand-power-header
+        .brand-power-header__hamburguer  
+            img(src="/images/locations/hamburguer.svg")
+        a.brand-power-header__logo(href="#")
+            img(src="/images/locations/bp-logo.png")
+    
+    main.brand-power-intro
+        .brand-power-intro__country-selector
+            .brand-power-intro__controls
+                button.brand-power-intro__control.brand-power-intro__control--prev
+                    img(src="/images/locations/arrow-up.svg")
+                button.brand-power-intro__control.brand-power-intro__control--next
+                    img(src="/images/locations/arrow-down.svg")
+                a.brand-power-intro__control.brand-power-intro__control--right(href="#")
+                    img(src="/images/locations/arrow-right.svg")
+            
+            ul.brand-power-intro__country-index-list
+                li.brand-power-intro__country-index
+                    i.fa.fa-globe
+            
+            .brand-power-intro__country-list
+                .brand-power-intro__country
+                .brand-power-intro__country.brand-power-intro__country--secondary
+                .brand-power-intro__country.brand-power-intro__country--main
+                .brand-power-intro__country.brand-power-intro__country--secondary
+                .brand-power-intro__country
+                    

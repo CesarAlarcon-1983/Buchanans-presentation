@@ -1,3 +1,38 @@
+.brand-power-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    min-height: rem(80px);
+    height: 4%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1000;
+    padding: rem(40px) rem(40px) 0;
+    
+    &__hamburguer {
+        height: auto;
+        width: 40px;
+        margin-right: rem(40px);
+    
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+    
+    &__logo {
+        height: 100%;
+        width: auto;
+    
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+}
+
 .brand-power-intro {
     background: url('/images/locations/globe.svg') no-repeat center center / cover;
     width: 100%;
@@ -5,60 +40,32 @@
     position: relative;
     overflow: hidden;
 
-    &__header {
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        min-height: rem(80px);
-        height: 4%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        z-index: 1000;
-        padding: rem(40px) rem(40px) 0;
-
-    }
-
-    &__hamburguer {
-        height: auto;
-        width: 40px;
-        margin-right: rem(40px);
-
-        img {
-            height: auto;
-            width: 100%;
-        }
-    }
-
-    &__logo {
-        height: 100%;
-        width: auto;
-
-        img {
-            height: 100%;
-            width: auto;
-        }
-    }
-
     &__country-selector {
         position: absolute;
         left: 40px;
         top: 50%;
         transform: translateY(-50%);
         display: flex;
-        // width: 100%;
+        height: 40%;
     }
 
-    &__arrow {
+    &__control {
         position: absolute;
         left: rem(80px);
+        cursor: pointer;
+        background: none;
+        border: none;
 
-        &--up {
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        &--prev {
             top: -20%;
         }
 
-        &--down {
+        &--next {
             bottom: -25%;
         }
 
@@ -68,40 +75,55 @@
             top: 50%;
             transform: translateY(-50%);
         }
-    }
 
-    &__country-index {
-        text-transform: uppercase;
-        width: 40px;
-        margin-right: 40px;
-    }
-
-    &__item {
-        &:not(:last-child) {
-            margin-bottom: 5px;
+        &.-disabled {
+            opacity: .3;
+            pointer-events: none;
         }
     }
 
-    &__index {
+    &__country-index-list {
+        width: 40px;
+        margin-right: 40px;
+        text-align: center;
+    }
+    
+    &__country-index {
+        @include trans;
+
+        text-transform: uppercase;
         color: $altGray;
         font-size: rem(16px);
         text-decoration: none;
+        cursor: default;
 
-        & > i {
+        &:first-child {
             color: $red;
         }
+        
+        // &:hover {
+        //     color: lighten($altGray, 20%);
+        // }
 
-        &.-active > i {
-            color: $white;
+        &:not(:last-child) {
+            margin-bottom: 5px;
         }
 
         &.-active {
             color: $white;
+
+            // &:hover {
+            //     color: $white;
+            // }
         }
     }
 
-    &__countries-list {
+    &__country-list {
         width: rem(400px);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     &__country {
@@ -114,34 +136,30 @@
         color: $altGray;
         height: 15%;
 
-        &--active {
+        &--main {
             color: $red;
             font-size: rem(50px);
             font-weight: 900;
             height: 30%;
         }
 
-        &--next-top,
-        &--next-bottom {
+        &--secondary {
             color: $white;
             font-size: rem(30px);
             font-weight: 900;
             letter-spacing: -0.7px;
-            align-items: flex-start;
+            padding: 2% 0;
             height: 20%;
         }
 
-        &--next-bottom {
-            align-items: flex-end;
-        }
-
-        &--top {
+        &:first-child,
+        &:nth-child(2) {
             align-items: flex-start;
         }
 
-        &--bottom {
+        &:last-child,
+        &:nth-child(4) {
             align-items: flex-end;
-
         }
     }
 }
