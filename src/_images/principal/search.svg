@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41.801" height="41.802" viewBox="0 0 41.801 41.802">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="41.801" height="41.802" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Search_Icon" data-name="Search Icon" clip-path="url(#clip-path)">
+    <g id="Search_Icon-2" data-name="Search Icon" transform="translate(1 1)">
+      <path id="Stroke_1" data-name="Stroke 1" d="M23.81,4.085a13.948,13.948,0,1,1-19.726,0A13.948,13.948,0,0,1,23.81,4.085Z" transform="translate(0 0)" fill="none" stroke="#ec2024" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_3" data-name="Stroke 3" d="M15.991,15.991h0a3.7,3.7,0,0,1-5.219,0l-9.7-9.7A3.691,3.691,0,0,1,6.3,1.077l9.7,9.7A3.7,3.7,0,0,1,15.991,15.991Z" transform="translate(22.734 22.734)" fill="none" stroke="#ec2024" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

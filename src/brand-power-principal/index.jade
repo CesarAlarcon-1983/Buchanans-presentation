@@ -1,0 +1,55 @@
+extends ../_layouts/base
+
+include ../_modules/product/product
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+    header.brand-power-principal__header
+        .brand-power-principal__header__heading
+            .brand-power-principal__header__back-arrow
+                img(src="/images/principal/arrow-back.svg")
+            span.brand-power-principal__header__selected-country United Arab Emirates
+        .brand-power-principal__header__controls
+            .brand-power-principal__header__controls-group
+                input.brand-power-principal__header__bp-sort-checkbox(type="checkbox" name="bp-sort" id="bp-sort")
+                label.brand-power-principal__header__bp-sort-label(for="bp-sort") brand power
+                    i.brand-power-principal__header__check-icon.fa.fa-check
+                    i.brand-power-principal__header__plus-icon.fa.fa-plus
+
+            .brand-power-principal__header__controls-group
+                input.brand-power-principal__header__medifact-sort-checkbox(type="checkbox" name="medifact-sort" id="medifact-sort")
+                label.brand-power-principal__header__medifact-sort-label(for="medifact-sort") medifact
+                    i.brand-power-principal__header__check-icon.fa.fa-check
+                    i.brand-power-principal__header__plus-icon.fa.fa-plus
+
+            .brand-power-principal__header__controls-group
+                input.brand-power-principal__header__other-sort-checkbox(type="checkbox" name="other-sort" id="other-sort")
+                label.brand-power-principal__header__other-sort-label(for="other-sort") others
+                    i.brand-power-principal__header__check-icon.fa.fa-check
+                    i.brand-power-principal__header__plus-icon.fa.fa-plus
+
+            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--filter
+                label.brand-power-principal__header__other-sort-label filter
+                    img(src="/images/principal/filter-icon.svg")
+            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon
+                img(src="/images/principal/View-Grid.svg")
+            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon
+                img(src="/images/principal/View-Coverflow.svg")
+            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon
+                img(src="/images/principal/View-List.svg")
+            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon
+                img(src="/images/principal/search.svg")
+
+    main.brand-power-principal
+        .brand-power-principal__products-container
+
+            - for (var i = 0; i < 10; ++i) {
+                .brand-power-principal__col
+                    +product()
+            - }
+
+
+

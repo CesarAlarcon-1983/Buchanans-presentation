@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="112" height="40" viewBox="0 0 112 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="112" height="40" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect width="19.528" height="17.001" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Filter_Button" data-name="Filter Button" clip-path="url(#clip-path)">
+    <g id="Filter_Button-2" data-name="Filter Button">
+      <g id="Button_Rectangle_Red" data-name="Button Rectangle Red">
+        <rect id="Button_Rectangle_Red_background" data-name="Button Rectangle Red background" width="112" height="40" fill="rgba(0,0,0,0)"/>
+        <rect id="Button_Rectangle_Grey" data-name="Button Rectangle Grey" width="112" height="40" rx="5" fill="#ec2024"/>
+      </g>
+      <g id="Configure_Icon" data-name="Configure Icon" transform="translate(78 12)" clip-path="url(#clip-path-2)">
+        <g id="Configure_Icon-2" data-name="Configure Icon" transform="translate(0 0)">
+          <path id="Fill_1" data-name="Fill 1" d="M4.631,4.21A2.112,2.112,0,0,1,2.569,2.527H.421a.422.422,0,0,1,0-.843H2.569a2.105,2.105,0,0,1,4.126,0H18.105a.422.422,0,1,1,0,.843H6.694A2.113,2.113,0,0,1,4.631,4.21Zm0-3.368A1.263,1.263,0,1,0,5.9,2.105,1.265,1.265,0,0,0,4.631.842Z" transform="translate(0.5 0.5)" fill="#fff"/>
+          <path id="Stroke_3" data-name="Stroke 3" d="M4.631,4.21A2.112,2.112,0,0,1,2.569,2.527H.421a.422.422,0,0,1,0-.843H2.569a2.105,2.105,0,0,1,4.126,0H18.105a.422.422,0,1,1,0,.843H6.694A2.113,2.113,0,0,1,4.631,4.21Zm0-3.368A1.263,1.263,0,1,0,5.9,2.105,1.265,1.265,0,0,0,4.631.842Z" transform="translate(0.5 0.5)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
+          <path id="Fill_5" data-name="Fill 5" d="M14.736,4.21a2.113,2.113,0,0,1-2.063-1.684H.421a.421.421,0,0,1,0-.842H12.673a2.106,2.106,0,0,1,4.127,0H18.1a.421.421,0,0,1,0,.842H16.8A2.114,2.114,0,0,1,14.736,4.21Zm0-3.368A1.263,1.263,0,1,0,16,2.105,1.264,1.264,0,0,0,14.736.842Z" transform="translate(0.501 6.395)" fill="#fff"/>
+          <path id="Stroke_7" data-name="Stroke 7" d="M14.736,4.21a2.113,2.113,0,0,1-2.063-1.684H.421a.421.421,0,0,1,0-.842H12.673a2.106,2.106,0,0,1,4.127,0H18.1a.421.421,0,0,1,0,.842H16.8A2.114,2.114,0,0,1,14.736,4.21Zm0-3.368A1.263,1.263,0,1,0,16,2.105,1.264,1.264,0,0,0,14.736.842Z" transform="translate(0.501 6.395)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
+          <path id="Fill_9" data-name="Fill 9" d="M9.263,4.211A2.113,2.113,0,0,1,7.2,2.526H.421a.421.421,0,1,1,0-.842H7.2a2.105,2.105,0,0,1,4.126,0h6.78a.421.421,0,1,1,0,.842h-6.78A2.112,2.112,0,0,1,9.263,4.211Zm0-3.369a1.263,1.263,0,1,0,1.265,1.263A1.264,1.264,0,0,0,9.263.842Z" transform="translate(0.5 12.29)" fill="#fff"/>
+          <path id="Stroke_11" data-name="Stroke 11" d="M9.263,4.211A2.113,2.113,0,0,1,7.2,2.526H.421a.421.421,0,1,1,0-.842H7.2a2.105,2.105,0,0,1,4.126,0h6.78a.421.421,0,1,1,0,.842h-6.78A2.112,2.112,0,0,1,9.263,4.211Zm0-3.369a1.263,1.263,0,1,0,1.265,1.263A1.264,1.264,0,0,0,9.263.842Z" transform="translate(0.5 12.29)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+      </g>
+      <text id="FILTER" transform="translate(13 20)" fill="#fff" font-size="14" font-family="SofiaProBlack, Sofia Pro" letter-spacing="0.071em"><tspan x="0" y="0">FILTER</tspan></text>
+    </g>
+  </g>
+</svg>
