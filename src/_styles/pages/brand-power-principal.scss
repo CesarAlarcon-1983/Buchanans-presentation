@@ -1,8 +1,152 @@
 .brand-power-principal {
+    $bpp: &;
+
     background: $black;
     width: 100%;
     position: relative;
     padding: rem(120px) rem(120px) 0;
+    min-height: 100%;
+    
+    &.-coverflow-view {
+        height: 100%;
+        min-height: auto;
+        overflow: hidden;
+        padding: rem(120px) 0 0;
+        
+        #{$bpp}__products-container {
+            display: block;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        #{$bpp}__col {
+            position: absolute;
+            top: 50%;
+            left: -9999px;
+            margin-bottom: 0;
+            margin: 0;
+            perspective: 1000px;
+            flex-shrink: 0;
+            transform: translateY(-50%);
+            width: 52%;
+
+            &.js-primary {
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+            }
+
+            &.js-secondary-prev {
+                left: .5%;
+                width: 35%;
+                top: 40%;
+                right: auto;
+
+                .brand-power-product {
+                    position: absolute;
+                    top: 50%;
+                    transform: rotateY(70deg) translateY(-50%);
+
+                    &__content {
+                        display: none;
+                    }
+                }
+
+            }
+
+            &.js-secondary-next {
+                right: .5%;
+                width: 35%;
+                left: auto;
+                top: 40%;
+
+                .brand-power-product {
+                    position: absolute;
+                    top: 50%;
+                    transform: rotateY(-70deg) translateY(-50%);
+
+                    &__content {
+                        display: none;
+                    }
+                }
+            }
+
+            &.js-tertiary-next {
+                right: -11.5%;
+                width: 35%;
+                left: auto;
+                top: 40%;
+
+                .brand-power-product {
+                    position: absolute;
+                    top: 50%;
+                    transform: rotateY(-75deg) translateY(-50%);
+
+                    &__content {
+                        display: none;
+                    }
+                }
+            }
+            
+            &.js-tertiary-prev {
+                left: -11.5%;
+                width: 35%;
+                top: 40%;
+                right: auto;
+
+                .brand-power-product {
+                    position: absolute;
+                    top: 50%;
+                    transform: rotateY(75deg) translateY(-50%);
+
+                    &__content {
+                        display: none;
+                    }
+                }
+
+            }
+
+            &.js-prev {
+            }
+
+            &.js-next {
+                
+            }
+        }
+        
+        .brand-power-product {
+
+
+        }
+    }
+
+    &.-list-view {
+        .brand-power-product {
+
+            display: flex;
+            border-bottom: 1px solid $red;
+            padding-bottom: 20px;
+            justify-content: space-between;
+    
+            &__image {
+                width: 30%;
+                padding-bottom: 20%;
+            }
+    
+            &__content {
+                border-bottom: none;
+                width: 65%;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    }    
 
     &__header {
         $h: &;
@@ -138,8 +282,13 @@
         flex-wrap: wrap;
         justify-content: space-between;
         height: 100%;
-    }
 
+        &:after {
+            content: '';
+            width: calc(33.3% - 20px);
+        }
+    }
+    
     &__col {
         width: calc(33.3% - 20px);
         margin-bottom: rem(40px);
