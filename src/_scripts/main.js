@@ -9,10 +9,12 @@ global.$ = global.jQuery;
 var Header = require('../_modules/header/header');
 var Slider = require('../_modules/slider/slider');
 var CountrySelector = require('./country-selector');
+var ViewChanger = require('./view-changer');
 
 $(function() {
 
     new Header();
     new Slider();
     new CountrySelector();
+    new ViewChanger();
 });

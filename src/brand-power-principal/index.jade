@@ -34,19 +34,18 @@ block content
             .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--filter
                 label.brand-power-principal__header__other-sort-label filter
                     img(src="/images/principal/filter-icon.svg")
-            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon
+            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon.js-grid-view
                 img(src="/images/principal/View-Grid.svg")
-            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon
+            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon.js-coverflow-view
                 img(src="/images/principal/View-Coverflow.svg")
-            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon
+            .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon.js-list-button
                 img(src="/images/principal/View-List.svg")
             .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon
                 img(src="/images/principal/search.svg")
 
     main.brand-power-principal
         .brand-power-principal__products-container
-
-            - for (var i = 0; i < 10; ++i) {
+            - for (var i = 0; i < 23; ++i) {
                 .brand-power-principal__col
                     +product()
             - }
