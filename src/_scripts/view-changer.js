@@ -26,15 +26,12 @@ var ViewChanger = function() {
     coverflowViewButton.on('click', function() {
         brandPowerPrincipalContainer.addClass('-coverflow-view');
         brandPowerPrincipalContainer.removeClass('-list-view');
+        coverflowViewUpdate()            
 
-        productContainer.addClass('js-prev');
-    
-        // $(productContainer[productContainer.length - 2]).addClass('js-tertiary-prev');
-        // $(productContainer[productContainer.length - 1]).addClass('js-secondary-prev');
-        $(productContainer[0]).addClass('js-primary');
-        $(productContainer[1]).addClass('js-secondary-next');
-        $(productContainer[2]).addClass('js-tertiary-next');
-        $(productContainer[3]).addClass('js-next');
+        // $(productContainer[0]).addClass('js-primary');
+        // $(productContainer[1]).addClass('js-secondary-next');
+        // $(productContainer[2]).addClass('js-tertiary-next');
+        // $(productContainer[3]).addClass('js-next');
     })
 
 
@@ -50,21 +47,8 @@ var ViewChanger = function() {
             console.log(true)
             return
         } else {
-            $(productContainer[index -2]).removeClass('js-tertiary-prev');
-            $(productContainer[index -1]).removeClass('js-secondary-prev');
-            $(productContainer[index]).removeClass('js-primary');
-            $(productContainer[index + 1]).removeClass('js-secondary-next');
-            $(productContainer[index + 2]).removeClass('js-tertiary-next');
-            $(productContainer[index + 3]).removeClass('js-next');
-            
             index--
-            
-            index - 2 < 0 ? '' : $(productContainer[index -2]).addClass('js-tertiary-prev');
-            index - 1 < 0 ? '' : $(productContainer[index -1]).addClass('js-secondary-prev');
-            $(productContainer[index]).addClass('js-primary');
-            index + 1 > productContainer.length ? '' : $(productContainer[index + 1]).addClass('js-secondary-next');
-            index + 2 > productContainer.length ? '' : $(productContainer[index + 2]).addClass('js-tertiary-next');
-            index + 2 > productContainer.length ? '' : $(productContainer[index + 3]).addClass('js-next');
+            coverflowViewUpdate()            
         }
     })
 
@@ -73,34 +57,30 @@ var ViewChanger = function() {
             console.log(true)
             return
         } else {
-            $(productContainer[index -2]).removeClass('js-tertiary-prev');
-            $(productContainer[index -1]).removeClass('js-secondary-prev');
-            $(productContainer[index]).removeClass('js-primary');
-            $(productContainer[index + 1]).removeClass('js-secondary-next');
-            $(productContainer[index + 2]).removeClass('js-tertiary-next');
-            $(productContainer[index + 3]).removeClass('js-next');
-            
             index++
-            
-            index-2 < 0 ? '' : $(productContainer[index -2]).addClass('js-tertiary-prev');
-            index - 1 < 0 ? '' : $(productContainer[index -1]).addClass('js-secondary-prev');
-            $(productContainer[index]).addClass('js-primary');
-            index + 1 > productContainer.length ? '' : $(productContainer[index + 1]).addClass('js-secondary-next');
-            index + 2 > productContainer.length ? '' : $(productContainer[index + 2]).addClass('js-tertiary-next');
-            index + 2 > productContainer.length ? '' : $(productContainer[index + 3]).addClass('js-next');
+            coverflowViewUpdate()            
         }
     })
 
-    function colPositionUpdate(control) {
-        var position;
-
-        if((index + control) >= 0 ) {
-            position =  productContainer.length + control;       
-        } else {
-            position =  index + control;
+    function coverflowViewUpdate(direction) {
+        var classes = [
+            'js-prev',
+            'js-tertiary-prev',
+            'js-secondary-prev',
+            'js-primary',
+            'js-secondary-next',
+            'js-tertiary-next',
+            'js-next'
+        ];
+        
+        for(var i = 0; i < 7; i++) {
+            productContainer.removeClass(classes[i]);
         }
+        
+        for(var i = 0 ; i < 7; i++) {
+            (index - 3) + i < 0 ? '' : $(productContainer[(index - 3) + i]).addClass(classes[i]);
 
-        return position;
+        }
     }
 
     console.log(productContainer.length);

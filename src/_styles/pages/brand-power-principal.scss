@@ -30,60 +30,22 @@
 
         #{$bpp}__col {
             position: absolute;
-            top: 50%;
-            left: -9999px;
+            bottom: 9999px;
             margin-bottom: 0;
             margin: 0;
             perspective: 1000px;
             flex-shrink: 0;
             transform: translateY(-50%);
             width: 52%;
-
-            &.js-primary {
-                left: 50%;
-                transform: translate3d(-50%, -50%, 0);
-            }
-
-            &.js-secondary-prev {
-                left: .5%;
-                width: 35%;
-                top: 43%;
-                right: auto;
-
-                .brand-power-product {
-                    position: absolute;
-                    top: 50%;
-                    transform: rotateY(70deg) translateY(-50%);
-
-                    &__content {
-                        display: none;
-                    }
-                }
-
-            }
-
-            &.js-secondary-next {
-                right: .5%;
-                width: 35%;
-                left: auto;
-                top: 43%;
-
-                .brand-power-product {
-                    position: absolute;
-                    top: 50%;
-                    transform: rotateY(-70deg) translateY(-50%);
-
-                    &__content {
-                        display: none;
-                    }
-                }
-            }
+            opacity: 0;
 
             &.js-tertiary-next {
                 right: -11.5%;
                 width: 35%;
-                left: auto;
                 top: 43%;
+                opacity: 1;
+                bottom: auto;
+                z-index: 8;
 
                 .brand-power-product {
                     position: absolute;
@@ -100,7 +62,9 @@
                 left: -11.5%;
                 width: 35%;
                 top: 43%;
-                right: auto;
+                opacity: 1;
+                bottom: auto;
+                z-index: 8;
 
                 .brand-power-product {
                     position: absolute;
@@ -111,11 +75,65 @@
                         display: none;
                     }
                 }
+            }
+
+            &.js-secondary-prev {
+                left: .5%;
+                width: 35%;
+                top: 43%;
+                opacity: 1;
+                bottom: auto;
+                z-index: 9;
+
+
+                .brand-power-product {
+                    position: absolute;
+                    top: 50%;
+                    transform: rotateY(70deg) translateY(-50%);
+
+                    &__content {
+                        display: none;
+                    }
+                }
 
             }
 
+            &.js-secondary-next {
+                right: .5%;
+                width: 35%;
+                top: 43%;
+                bottom: auto;
+                opacity: 1;
+                z-index: 9;
+
+                .brand-power-product {
+                    position: absolute;
+                    top: 50%;
+                    transform: rotateY(-70deg) translateY(-50%);
+
+                    &__content {
+                        display: none;
+                    }
+                }
+            }
+            
+            &.js-primary {
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+                opacity: 1;
+                z-index: 10;
+                top: 50%;
+                bottom: auto;
+            }
+
             &.js-next {
-                right: -9999px;
+                right: -100vw;
+                opacity: 0;
+            }
+
+            &.js-prev {
+                left: -100vw;
+                opacity: 0;
             }
         }
         
@@ -307,7 +325,7 @@
         height: 40px;
         width: 40px;
         cursor: pointer;
-        
+
         &:after {
             content: '';
             position: absolute;
