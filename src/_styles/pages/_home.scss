@@ -15,6 +15,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
+        cursor: pointer;
 
         &:hover {
             #{$h}__background {
@@ -24,6 +25,47 @@
                     opacity: 1;
                     transform: translate3d(-50%, -50%, 0) scale3d(1.02, 1.02, 1.02);
                 }
+            }
+        }
+    }
+
+    &__brand-power-logo {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10%;
+
+        &__top,
+        &__bottom {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding-bottom: 21.5%;
+            animation: brandPowerLogoContainer 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1) 1 forwards;
+            transform: translateY(30%);
+            opacity: 0;
+            
+            svg {
+                fill: $white;
+                position: absolute;
+                width: 100%; 
+                height: 100%;
+                top: 0;
+                left: 0;
+                animation: brandPowerLogoFadeIn 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1) 1 forwards;
+                transform: translateY(100%);
+                opacity: 0;
+            }
+        }
+
+        &__top {
+            margin-bottom: 5px;
+            width: 98%;
+        }
+
+        &__bottom {
+            svg {
+                animation-delay: 1.15s;
             }
         }
     }
@@ -38,16 +80,6 @@
 
         filter: grayscale(50%);
         
-        // &:after {
-        //     content: '';
-
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     right: 0;
-        //     bottom: 0;
-        // }
-        
         img {
             @include trans;
             
@@ -60,7 +92,7 @@
 
         &--brand-power {
             img {
-                top: 45%;
+                top: 47%;
                 height: auto;
                 width: 100%;
             }
@@ -80,7 +112,7 @@
         padding-top: 10%;
     }
 
-    &__logo {
+    &__home-tester-club-logo {
         width: 60%;
         margin-left: auto;
         margin-right: auto;
@@ -89,6 +121,9 @@
         img {
             width: 100%;
             height: auto;
+            animation: HTCLogoFadeIn 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1) 1 forwards;
+            transform: translateX(100%);
+            opacity: 0;
         }
     }
 
@@ -97,5 +132,56 @@
         text-align: center;
         font-size: rem(16px);
         margin: 0;
+        animation: slogan 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1) 1 forwards;
+        transform: translateY(300%);
+        opacity: 0;
     }
 }
+
+@keyframes brandPowerLogoFadeIn {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes HTCLogoFadeIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes brandPowerLogoContainer {
+    0% {
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slogan {
+    0% {
+        transform: translateY(300%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+

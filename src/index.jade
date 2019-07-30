@@ -1,19 +1,28 @@
 extends _layouts/base
 
+include _modules/logos/brand-power
+
 block content
     main.intro
         section.intro__brand-power
             .intro__background.intro__background--brand-power
-                img(src="/images/home/girl.jpg")
+                img(src="/images/intro/girl.jpg")
             .intro__brand
-                .intro__logo
-                    img(src="/images/home/logo.png")
+                .intro__brand-power-logo
+                    .intro__brand-power-logo__top
+                        svg
+                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#brand-power-top")
+                    .intro__brand-power-logo__bottom
+                        svg
+                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#brand-power-bottom")
+                
+                
                 p.intro__slogan The power of third-party advertising.
         section.intro__home-tester-club
             .intro__background.intro__background--home-tester-club
-                img(src="/images/home/carts.jpg")
+                img(src="/images/intro/carts.jpg")
             .intro__brand
-                .intro__logo
-                    img(src="/images/home/logo.png")
+                .intro__home-tester-club-logo
+                    img(src="/images/home-tester-club.png")
                 p.intro__slogan The power of authentic p2p content.
 
