@@ -1,0 +1,17 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+    header.brand-power-search__header
+        a.brand-power-search__header__close-icon(href="/brand-power-principal")
+            span.-horizontal
+            span.-vertical
+    main.brand-power-search
+        .brand-power-search__search-group
+            input.brand-power-search__input(autofocus)
+            button.brand-power-search__search-icon
+                img(src="/images/principal/search.svg")
+

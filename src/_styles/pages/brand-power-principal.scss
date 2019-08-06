@@ -36,16 +36,26 @@
             perspective: 1000px;
             flex-shrink: 0;
             transform: translateY(-50%);
-            width: 52%;
             opacity: 0;
 
             &.js-tertiary-next {
-                right: -11.5%;
                 width: 35%;
                 top: 43%;
                 opacity: 1;
                 bottom: auto;
                 z-index: 8;
+
+                @include customMq(1200px) {
+                    right: -11.7%;
+                }
+
+                @include customMq(1400px) {
+                    right: -11.5%;
+                }
+
+                @include customMq(1600px) {
+                    right: -10.9%;
+                }
 
                 .brand-power-product {
                     position: absolute;
@@ -66,6 +76,18 @@
                 bottom: auto;
                 z-index: 8;
 
+                @include customMq(1200px) {
+                    left: -11.7%;
+                }
+
+                @include customMq(1400px) {
+                    left: -11.5%;
+                }
+
+                @include customMq(1600px) {
+                    left: -10.9%;
+                }
+
                 .brand-power-product {
                     position: absolute;
                     top: 50%;
@@ -78,14 +100,25 @@
             }
 
             &.js-secondary-prev {
-                left: .5%;
+                // left: 1%;
                 width: 35%;
                 top: 43%;
                 opacity: 1;
                 bottom: auto;
                 z-index: 9;
 
+                @include customMq(1200px) {
+                    left: 0;
+                }
 
+                @include customMq(1400px) {
+                    left: .5%;
+                }
+
+                @include customMq(1600px) {
+                    left: 2%;
+                }
+                
                 .brand-power-product {
                     position: absolute;
                     top: 50%;
@@ -99,12 +132,24 @@
             }
 
             &.js-secondary-next {
-                right: .5%;
+                // right: 1%;
                 width: 35%;
                 top: 43%;
                 bottom: auto;
                 opacity: 1;
                 z-index: 9;
+
+                @include customMq(1200px) {
+                    right: 0;
+                }
+
+                @include customMq(1400px) {
+                    right: .5%;
+                }
+
+                @include customMq(1600px) {
+                    right: 2%;
+                }
 
                 .brand-power-product {
                     position: absolute;
@@ -118,12 +163,25 @@
             }
             
             &.js-primary {
+                // width: 52%;
                 left: 50%;
                 transform: translate3d(-50%, -50%, 0);
                 opacity: 1;
                 z-index: 10;
                 top: 50%;
                 bottom: auto;
+
+                @include customMq(1200px) {
+                    width: 53%;
+                }
+
+                @include customMq(1400px) {
+                    width: 52%;
+                }
+
+                @include customMq(1600px) {
+                    width: 50%;
+                }
             }
 
             &.js-next {
@@ -176,7 +234,7 @@
         top: 0;
         left: 0;
         min-height: rem(120px);
-        height: 4%;
+        height: 40px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -219,9 +277,10 @@
             height: 100%;
             width: rem(168px);
             margin-left: rem(20px);
-
+            
             &--filter {
                 width: rem(112px);
+                text-decoration: none;
             }
 
             &--single-icon {
@@ -272,6 +331,8 @@
             font-size: rem(14px);
             border-radius: 5px;
             position: relative;
+            cursor: pointer;
+
 
             i {
                 font-size: 18px;

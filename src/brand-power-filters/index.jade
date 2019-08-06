@@ -1,0 +1,107 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+    //- header.brand-power-principal__header
+    //-     .brand-power-principal__header__heading
+    //-         .brand-power-principal__header__back-arrow
+    //-             img(src="/images/principal/arrow-back.svg")
+    //-         span.brand-power-principal__header__selected-country United Arab Emirates
+    //-     .brand-power-principal__header__controls
+    //-         .brand-power-principal__header__controls-group
+    //-             input.brand-power-principal__header__bp-sort-checkbox(type="checkbox" name="bp-sort" id="bp-sort")
+    //-             label.brand-power-principal__header__bp-sort-label(for="bp-sort") brand power
+    //-                 i.brand-power-principal__header__check-icon.fa.fa-check
+    //-                 i.brand-power-principal__header__plus-icon.fa.fa-plus
+
+    //-         .brand-power-principal__header__controls-group
+    //-             input.brand-power-principal__header__medifact-sort-checkbox(type="checkbox" name="medifact-sort" id="medifact-sort")
+    //-             label.brand-power-principal__header__medifact-sort-label(for="medifact-sort") medifact
+    //-                 i.brand-power-principal__header__check-icon.fa.fa-check
+    //-                 i.brand-power-principal__header__plus-icon.fa.fa-plus
+
+    //-         .brand-power-principal__header__controls-group
+    //-             input.brand-power-principal__header__other-sort-checkbox(type="checkbox" name="other-sort" id="other-sort")
+    //-             label.brand-power-principal__header__other-sort-label(for="other-sort") others
+    //-                 i.brand-power-principal__header__check-icon.fa.fa-check
+    //-                 i.brand-power-principal__header__plus-icon.fa.fa-plus
+
+    //-         .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--filter
+    //-             label.brand-power-principal__header__other-sort-label filter
+    //-                 img(src="/images/principal/filter-icon.svg")
+    //-         .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon.js-grid-view
+    //-             img(src="/images/principal/View-Grid.svg")
+    //-         .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon.js-coverflow-view
+    //-             img(src="/images/principal/View-Coverflow.svg")
+    //-         .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon.js-list-button
+    //-             img(src="/images/principal/View-List.svg")
+    //-         .brand-power-principal__header__controls-group.brand-power-principal__header__controls-group--single-icon
+    //-             img(src="/images/principal/search.svg")
+
+    header.brand-power-filters__header
+        a.brand-power-filters__header__back-arrow(href="/brand-power-principal")
+            img(src="/images/principal/arrow-back.svg")
+        .brand-power-filters__header__titles
+            .brand-power-filters__header__title
+                h2 Category
+            .brand-power-filters__header__title
+                h2 Company
+            .brand-power-filters__header__title
+                h2 Job to be done
+        .brand-power-filters__header__check-icon
+            i.fa.fa-check
+
+    main.brand-power-filters
+        .brand-power-filters__group
+            .brand-power-filters__search
+                input.brand-power-filters__input(placeholder="Search")
+                .brand-power-filters__search-icon
+                    img(src="/images/principal/search.svg")
+            .brand-power-filters__wrapper
+                ul.brand-power-filters__filters-group
+                    li.brand-power-filters__filter-item View all
+                    - for(var i = 0; i < 23; i++) {
+                        li.brand-power-filters__filter-item Category number #{i + 1}
+                    - }
+
+        .brand-power-filters__group
+            .brand-power-filters__search
+                input.brand-power-filters__input(placeholder="Search")
+                .brand-power-filters__search-icon
+                    img(src="/images/principal/search.svg")
+            .brand-power-filters__wrapper
+                ul.brand-power-filters__filters-group
+                    li.brand-power-filters__filter-item View all
+                    - for(var i = 0; i < 23; i++) {
+                        li.brand-power-filters__filter-item Company number #{i + 1}
+                    - }
+            
+        .brand-power-filters__group
+            .brand-power-filters__search
+                input.brand-power-filters__input(placeholder="Search")
+                .brand-power-filters__search-icon
+                    img(src="/images/principal/search.svg")
+            .brand-power-filters__wrapper
+                ul.brand-power-filters__filters-group
+                    li.brand-power-filters__filter-item View all
+                    li.brand-power-filters__filter-item Brand migration
+                    li.brand-power-filters__filter-item Cynical consumer
+                    li.brand-power-filters__filter-item Usage quantity
+                    li.brand-power-filters__filter-item Usage habits
+                    li.brand-power-filters__filter-item Direct comparison
+                    li.brand-power-filters__filter-item Drive publicity
+                    li.brand-power-filters__filter-item Respond to negative PR
+                    li.brand-power-filters__filter-item Drive value/price
+                    li.brand-power-filters__filter-item Educate on complex porduct
+                    li.brand-power-filters__filter-item Expert recommendation
+                    li.brand-power-filters__filter-item New porduct launch
+                    li.brand-power-filters__filter-item Complement equity campaign
+                    li.brand-power-filters__filter-item New line extension
+                    li.brand-power-filters__filter-item Change of target demographic
+                    li.brand-power-filters__filter-item Promote competition
+                    li.brand-power-filters__filter-item Reasure and sustantiate
+                    li.brand-power-filters__filter-item Sell new benefit (existing product)
+                    li.brand-power-filters__filter-item Stop down trading to cheap
