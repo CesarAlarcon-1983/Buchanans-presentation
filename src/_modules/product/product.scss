@@ -1,14 +1,28 @@
 .brand-power-product {
+    @include trans;
+    
     width: 100%;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        background: $red;
+        width: 0;
+    }
 
     &__image {
+        transform: scale3d(0,0,0);
         width: 100%;
         height: 0;
         overflow: hidden;
         padding-bottom: 56.5%;
         position: relative;
         background: $altGray;
-
+        
         img {
             position: absolute;
             top: 10px;
@@ -21,10 +35,25 @@
     &__content {
         padding: rem(20px) 0;
         color: $white;
-        border-bottom: 1px solid $red;
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            background: $red;
+            width: 0;
+        }
     }
 
     &__title {
+        overflow: hidden;
+        transform: translateY(-200px);
         font-weight: 900;
         margin: 0;
         margin-bottom: 10px;
@@ -32,6 +61,8 @@
     }
 
     &__description {
+        transform: translateY(-200px);
+        overflow: hidden;
         margin: 0;
         font-size: rem(12px);
         font-style: italic;
