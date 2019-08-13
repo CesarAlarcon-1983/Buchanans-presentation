@@ -7,6 +7,45 @@
     padding: rem(120px) rem(120px) 0;
     min-height: 100%;
     
+    &.-grid-view {
+        @for $i from 1 through 99 {
+            .brand-power-principal__col:nth-child(#{$i}) {
+                .brand-power-product__image {
+                    animation: gridView 1s ease forwards;
+                    animation-delay: #{$i * 0.15}s;
+                }
+            }
+        }
+
+        .brand-power-product {
+            &:after {
+                display: none;
+            }
+
+            &__content {
+                &:after {
+                    display: block;
+                    animation: borderAnimation 1s ease forwards;
+                    animation-delay: 2s;
+
+                    @include customMq(1600px) {
+                        animation-delay: 3s;
+                    }
+                }
+            }
+
+            &__title,
+            &__description {
+                animation: gridTextAnimation 1s ease forwards;
+                animation-delay: 2s;
+    
+                @include customMq(1600px) {
+                    animation-delay: 3s;
+                }
+            }
+        }       
+    }
+
     &.-coverflow-view {
         height: 100%;
         min-height: auto;
@@ -18,7 +57,7 @@
             height: 100%;
             overflow: hidden;
             position: relative;
-
+            
             &:after {
                 display: none;
             }
@@ -27,84 +66,126 @@
         #{$bpp}__controls {
             display: flex;
         }
-
+        
         #{$bpp}__col {
             position: absolute;
-            bottom: 9999px;
-            margin-bottom: 0;
+            left: 100vw;
             margin: 0;
+            top: 50%;
+            width: 35%;
             perspective: 1000px;
             flex-shrink: 0;
-            transform: translateY(-50%);
+            transform: rotateY(-75deg) translate3d(0, -50%, 0);
             opacity: 0;
+            z-index: 8;
 
-            &.js-tertiary-next {
-                width: 35%;
-                top: 43%;
-                opacity: 1;
-                bottom: auto;
-                z-index: 8;
-
-                @include customMq(1200px) {
-                    right: -11.7%;
+            .brand-power-product {
+                position: absolute;
+                top: 50%;
+                transform: rotateY(-75deg) translateY(-50%);
+            
+                &__image {
+                    transform: scale3d(1,1,1);
                 }
-
+    
+                &__content {
+                    visibility: hidden;
+                }
+    
+                &__title,
+                &__description {
+                    transform: translateY(0);
+                    text-align: center;
+                    transform: translateY(-300px);
+                }
+            }
+            
+            &.js-tertiary-next {
+                opacity: 1;
+                
+                @include customMq(1200px) {
+                    left: 111.7%;
+                    transform: translate3d(-100%, -50%, 0);
+                }
+                
                 @include customMq(1400px) {
-                    right: -11.5%;
+                    left: 111.5%;
+                }
+                
+                @include customMq(1600px) {
+                    left: 110.9%;
+                }
+            }
+            
+            &.js-secondary-next {
+                width: 35%;
+                opacity: 1;
+                z-index: 9;
+                
+                @include customMq(1200px) {
+                    left: 100%;
+                    transform: translate3d(-100%, -50%, 0);
+                }
+                
+                @include customMq(1400px) {
+                    left: 99.5%;
                 }
 
                 @include customMq(1600px) {
-                    right: -10.9%;
+                    left: 98%;
                 }
 
                 .brand-power-product {
                     position: absolute;
                     top: 50%;
-                    transform: rotateY(-75deg) translateY(-50%);
+                    transform: rotateY(-70deg) translateY(-50%);
 
                     &__content {
-                        display: none;
+                        visibility: hidden;
                     }
                 }
             }
             
-            &.js-tertiary-prev {
-                left: -11.5%;
-                width: 35%;
-                top: 43%;
+            &.js-primary {
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
                 opacity: 1;
-                bottom: auto;
-                z-index: 8;
+                z-index: 10;
 
                 @include customMq(1200px) {
-                    left: -11.7%;
+                    width: 53%;
                 }
 
                 @include customMq(1400px) {
-                    left: -11.5%;
+                    width: 52%;
                 }
 
                 @include customMq(1600px) {
-                    left: -10.9%;
+                    width: 50%;
                 }
 
                 .brand-power-product {
                     position: absolute;
                     top: 50%;
-                    transform: rotateY(75deg) translateY(-50%);
+                    transform: rotateY(0) translateY(-50%);
 
                     &__content {
-                        display: none;
+                        visibility: visible;
+                    }
+
+                    &__title,
+                    &__description {
+                        animation: coverflowTextAnimation 1s ease forwards;
+                        animation-delay: .5s;
                     }
                 }
             }
 
             &.js-secondary-prev {
-                // left: 1%;
                 width: 35%;
-                top: 43%;
+                transform: translate3d(0, 0, 0);
+                // top: 43%;
                 opacity: 1;
-                bottom: auto;
                 z-index: 9;
 
                 @include customMq(1200px) {
@@ -125,68 +206,39 @@
                     transform: rotateY(70deg) translateY(-50%);
 
                     &__content {
-                        display: none;
+                        visibility: hidden;
                     }
                 }
 
             }
 
-            &.js-secondary-next {
-                // right: 1%;
+            &.js-tertiary-prev {
                 width: 35%;
-                top: 43%;
-                bottom: auto;
+                // top: 43%;
                 opacity: 1;
-                z-index: 9;
+                z-index: 8;
 
                 @include customMq(1200px) {
-                    right: 0;
+                    left: -11.7%;
                 }
 
                 @include customMq(1400px) {
-                    right: .5%;
+                    left: -11.5%;
                 }
 
                 @include customMq(1600px) {
-                    right: 2%;
+                    left: -10.9%;
                 }
 
                 .brand-power-product {
                     position: absolute;
                     top: 50%;
-                    transform: rotateY(-70deg) translateY(-50%);
+                    transform: rotateY(75deg) translateY(-50%);
 
                     &__content {
-                        display: none;
+                        visibility: hidden;
                     }
                 }
-            }
-            
-            &.js-primary {
-                // width: 52%;
-                left: 50%;
-                transform: translate3d(-50%, -50%, 0);
-                opacity: 1;
-                z-index: 10;
-                top: 50%;
-                bottom: auto;
-
-                @include customMq(1200px) {
-                    width: 53%;
-                }
-
-                @include customMq(1400px) {
-                    width: 52%;
-                }
-
-                @include customMq(1600px) {
-                    width: 50%;
-                }
-            }
-
-            &.js-next {
-                right: -100vw;
-                opacity: 0;
             }
 
             &.js-prev {
@@ -194,21 +246,34 @@
                 opacity: 0;
             }
         }
-        
-        .brand-power-product {
-
-
-        }
     }
 
     &.-list-view {
+        @for $i from 1 through 99 {
+            .brand-power-principal__col:nth-child(#{$i}) {
+                .brand-power-product__image {
+                    animation: listlView 1s ease forwards;
+                    animation-delay: #{$i * 0.10}s;
+                }
+            }
+        }
+
         .brand-power-product {
 
             display: flex;
-            border-bottom: 1px solid $red;
             padding-bottom: 20px;
             justify-content: space-between;
+
+            &:after {
+                display: block;
+                animation: borderAnimation 1s ease forwards;
+                animation-delay: 2s;
     
+                @include customMq(1600px) {
+                    animation-delay: 3s;
+                }
+            }
+
             &__image {
                 width: 30%;
                 padding-bottom: 20%;
@@ -221,9 +286,23 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            &__title,
+            &__description {
+                animation: listTextAnimation 1s ease forwards;
+                animation-delay: 2s;
+    
+                @include customMq(1600px) {
+                    animation-delay: 3s;
+                }
             }
         }
-    }    
+    }
 
     &__header {
         $h: &;
@@ -367,6 +446,11 @@
         &:after {
             content: '';
             width: calc(33.3% - 20px);
+
+            @include customMq(1600px) {
+                width: calc(25% - 20px);;
+            }
+    
         }
     }
 
@@ -414,11 +498,58 @@
             }
         }
     }
-    
+
     &__col {
         @include trans;
         
-        width: calc(33.3% - 20px);
+        width: calc(33.3% - 20px);;
         margin-bottom: rem(40px);
+
+        @include customMq(1600px) {
+            width: calc(25% - 20px);;
+        }
+    }
+}
+
+@keyframes gridView {
+    0% {transform: scale3d(0,0,0);}
+    80% {transform: scale3d(1.05,1.05,1.05);}
+    100% {transform: scale3d(1,1,1);}
+}
+
+@keyframes listlView {
+    0% {transform: scale3d(0,0,0);}
+    80% {transform: scale3d(1.05,1.05,1.05);}
+    100% {transform: scale3d(1,1,1);}
+}
+
+@keyframes gridTextAnimation {
+    0% {transform: translateY(-300%);}
+    100% {transform: translateY(0);}    
+}
+
+@keyframes listTextAnimation {
+    0% {transform: translateY(-300%);}
+    100% {transform: translateY(0);}
+}
+
+@keyframes coverflowTextAnimation {
+    0% {transform: translateY(-300%);}
+    100% {transform: translateY(0);}
+}
+
+@keyframes borderAnimation {
+    0% {width: 0;}
+    100% {width: 100%;}
+}
+
+@keyframes secondaryPrevAnimation {
+    0%{}
+    100%{}
+}
+
+@keyframes secondaryNextAnimation {
+    0%{}
+    100%{width: 35%; 
     }
 }

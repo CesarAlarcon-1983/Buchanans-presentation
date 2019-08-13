@@ -10,58 +10,56 @@ var ViewChanger = function() {
 
     // List View
     listViewButton.on('click', function() {
+        coverflowViewUpdate('clear');
         brandPowerPrincipalContainer.addClass('-list-view');
         brandPowerPrincipalContainer.removeClass('-coverflow-view');
+        brandPowerPrincipalContainer.removeClass('-grid-view');
     });
 
     // Grid View
     gridViewButton.on('click', function() {
+        coverflowViewUpdate('clear');
         brandPowerPrincipalContainer.removeClass('-coverflow-view');
         brandPowerPrincipalContainer.removeClass('-list-view');
+        brandPowerPrincipalContainer.addClass('-grid-view');
     });
 
     //Coverflow View
-    var index = 0;
-
+    
     coverflowViewButton.on('click', function() {
         brandPowerPrincipalContainer.addClass('-coverflow-view');
         brandPowerPrincipalContainer.removeClass('-list-view');
-        coverflowViewUpdate()            
-
-        // $(productContainer[0]).addClass('js-primary');
-        // $(productContainer[1]).addClass('js-secondary-next');
-        // $(productContainer[2]).addClass('js-tertiary-next');
-        // $(productContainer[3]).addClass('js-next');
+        brandPowerPrincipalContainer.removeClass('-grid-view');
+        coverflowViewUpdate();
     })
-
-
+    
+    
     // Coverflow Controls Functionality
+
+    var index = 0;
     var arrowPrev = $('.brand-power-principal__arrow--prev')
     var arrowNext = $('.brand-power-principal__arrow--next')
 
     arrowPrev.on('click', function() {
-        console.log(productContainer);
-        console.log(productContainer.length);
-        
-        if(index === (0)) {
-            console.log(true)
+        if(index === 0) {
+            console.log('arrow prev index 0', index)
             return
         } else {
+            console.log('arrow prev index > 0', index)
+            coverflowViewUpdate('prev');
             index--
-            coverflowViewUpdate()            
         }
     })
 
     arrowNext.on('click', function() {
         if(index === (productContainer.length - 1)) {
-            console.log(true)
             return
         } else {
             index++
-            coverflowViewUpdate()            
+            coverflowViewUpdate('next');
         }
-    })
-
+    });
+    
     function coverflowViewUpdate(direction) {
         var classes = [
             'js-prev',
@@ -70,20 +68,34 @@ var ViewChanger = function() {
             'js-primary',
             'js-secondary-next',
             'js-tertiary-next',
-            'js-next'
         ];
         
-        for(var i = 0; i < 7; i++) {
-            productContainer.removeClass(classes[i]);
-        }
-        
-        for(var i = 0 ; i < 7; i++) {
-            (index - 3) + i < 0 ? '' : $(productContainer[(index - 3) + i]).addClass(classes[i]);
+       if (direction === 'next') {
+            for(var i = 0 ; i < 6; i++) {
+                (index - 3) + i < 0 ? '' : $(productContainer[(index - 3) + i]).addClass(classes[i]);
+            }
+        }       
 
+        if (direction === 'prev') {
+            for(var i = 0 ; i < 6; i++) {
+                (index - 3) + i < 0 ? '' : $(productContainer[(index - 3) + i]).removeClass(classes[i]);
+            }
+        }
+
+        if (!direction) {
+            $(productContainer[0]).addClass('js-tertiary-next js-secondary-next js-primary');
+            $(productContainer[1]).addClass('js-tertiary-next js-secondary-next');
+            $(productContainer[2]).addClass('js-tertiary-next');
+        }
+
+        if (direction === 'clear') {
+            for(var i = 0 ; i < 6; i++) {
+                productContainer.removeClass(classes[i]);
+            }
         }
     }
-
-    console.log(productContainer.length);
+    
+    brandPowerPrincipalContainer.addClass('-grid-view');
 };
 
 module.exports = ViewChanger;

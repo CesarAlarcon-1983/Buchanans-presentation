@@ -10,6 +10,7 @@ var Header = require('../_modules/header/header');
 var Slider = require('../_modules/slider/slider');
 var CountrySelector = require('./country-selector');
 var ViewChanger = require('./view-changer');
+var Case = require('./case');
 
 $(function() {
 
@@ -17,4 +18,5 @@ $(function() {
     new Slider();
     new CountrySelector();
     new ViewChanger();
+    new Case();
 });
