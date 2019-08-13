@@ -73,13 +73,13 @@
         border: none;
         outline: none;
         color: $white;
-        font-size: rem(60px);
+        font-size: rem(54px);
         font-family: $mainFont; 
         font-weight: 900;
         caret-color: $red;
         border-bottom: 1px solid $red;
         animation: input 1.5s ease forwards;
-
+        padding: 0 5px;
     }
 
     &__search-icon {
