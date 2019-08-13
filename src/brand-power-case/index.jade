@@ -63,8 +63,31 @@ block content
                     iframe(width="100%" height="100%" src="https://www.youtube.com/embed/o7wtLxBhbL8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
             .brand-power-case__section.brand-power-case__section--chart(data-content="chart1")
                 .brand-power-case__chart-container
+                    img(src="/images/chart.jpg")
                     .brand-power-case__chart-overlay
                     .brand-power-case__open-button
-                        img(src="#")
-            //- .brand-power-case__section.brand-power-case__section--chart(data-content="chart2")
+                        svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='22', height='42', viewbox='0 0 22 42')
+                            defs
+                                rect(width='22', height='42', fill='none')
+                            |   
+                            g#Arrow_Down(data-name='Arrow Down')
+                                g#Arrow_Down-2(data-name='Arrow Down', transform='translate(1 1)')
+                                path#Stroke_1(data-name='Stroke 1', d='M0,0,10,10,20,0', transform='translate(0 30)', fill='none', stroke='#fff', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', stroke-width='2')
+                                |       
+                                path#Stroke_3(data-name='Stroke 3', d='M.5,40V0', transform='translate(9.5)', fill='none', stroke='#fff', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', stroke-width='2')
+                        svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='22', height='42', viewbox='0 0 22 42')
+                            defs
+                                rect(width='22', height='42', fill='none')
+                            |   
+                            g#Arrow_Up(data-name='Arrow Up')
+                                g#Arrow_Up-2(data-name='Arrow Up', transform='translate(1 1)')
+                                path#Stroke_1(data-name='Stroke 1', d='M20,10,10,0,0,10', transform='translate(0 0)', fill='none', stroke='#fff', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', stroke-width='2')
+                                |       
+                                path#Stroke_3(data-name='Stroke 3', d='M.5,0V40', transform='translate(9.5 0)', fill='none', stroke='#fff', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', stroke-width='2')
 
+                        //- img(src="#")
+            //- .brand-power-case__section.brand-power-case__section--chart(data-content="chart2")
+        .brand-power-case__index
+            span
+            span.-active
+            span
