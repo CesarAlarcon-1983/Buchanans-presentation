@@ -4,9 +4,10 @@
 var Case = function() {
     //headings fnuctionality
     var controls = $('.brand-power-case__header__control');
-    var sections = $('.brand-power-case__section');
+    var sections = $('[data-content]');
 
     controls.on('click', function() {
+        
         sections.addClass('-active');
     })
 

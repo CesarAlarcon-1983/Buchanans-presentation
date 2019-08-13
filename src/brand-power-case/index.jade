@@ -12,14 +12,14 @@ block content
             .brand-power-case__header__logo
                 img(src="/images/principal/logo.svg")
         ul.brand-power-case__header__controls-list
-            li.brand-power-case__header__control Introduction
-            li.brand-power-case__header__control Video
-            li.brand-power-case__header__control Chart 1
-            li.brand-power-case__header__control Chart 2
+            li.brand-power-case__header__control(data-target="introduction") Introduction
+            li.brand-power-case__header__control(data-target="video") Video
+            li.brand-power-case__header__control(data-target="chart1") Chart 1
+            //- li.brand-power-case__header__control(data-target="chart2") Chart 2
 
     main.brand-power-case
         .brand-power-case__container
-            .brand-power-case__section.brand-power-case__section--introduction
+            .brand-power-case__section.brand-power-case__section--introduction(data-content="introduction")
                 .brand-power-case__brand-details
                     h1.brand-power-case__title Orville achieves a 3 year record dollar volume growth of 28%, with Brand Power.
                     .brand-power-case__brand-info
@@ -57,14 +57,14 @@ block content
                         h3.brand-power-case__details-text Results
                         p.brand-power-case__details-text.brand-power-case__details-text--white The strategic approach to leverage Brand Power in mass market and high reach digital achieved a 3-year record dollar volume growth of 28% and increased dollar share +6pts, while restoring positive growth to the overall microwave popcorn category.
 
-            .brand-power-case__section.brand-power-case__section--video
+            .brand-power-case__section.brand-power-case__section--video(data-content="video")
                 .brand-power-case__video-container
                     .brand-power-case__video-overlay
                     iframe(width="100%" height="100%" src="https://www.youtube.com/embed/o7wtLxBhbL8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-            .brand-power-case__section.brand-power-case__section--chart
+            .brand-power-case__section.brand-power-case__section--chart(data-content="chart1")
                 .brand-power-case__chart-container
                     .brand-power-case__chart-overlay
                     .brand-power-case__open-button
                         img(src="#")
-            .brand-power-case__section.brand-power-case__section--chart
+            //- .brand-power-case__section.brand-power-case__section--chart(data-content="chart2")
 

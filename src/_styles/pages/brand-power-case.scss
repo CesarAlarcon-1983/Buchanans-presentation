@@ -74,15 +74,19 @@
     }
 
     &__section {
-        width: 66.6%;
+        width: calc(66.6% - 120px);
         flex-shrink: 0;
 
         &:first-child {
-            padding-left: rem(120px);
+            margin-left: rem(120px);
         }
 
-        &:not(:first-child) {
-            padding-right: rem(120px);
+        &:last-child {
+            margin-right: rem(120px);
+        }
+
+        &:not(:last-child) {
+            margin-right: 40px;
         }
 
         &--introduction {
@@ -90,7 +94,7 @@
         }
 
         &.-active {
-            
+
         }
     }
 
@@ -151,7 +155,6 @@
 
     &__video-container {
         height: 100%;
-        margin-left: rem(40px);
         position: relative;
     }
 
