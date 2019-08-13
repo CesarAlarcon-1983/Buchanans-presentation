@@ -147,7 +147,6 @@
             }
             
             &.js-primary {
-                // top: 50%;
                 left: 50%;
                 transform: translate3d(-50%, -50%, 0);
                 opacity: 1;
@@ -176,7 +175,7 @@
 
                     &__title,
                     &__description {
-                        animation: listTextAnimation 1s ease forwards;
+                        animation: coverflowTextAnimation 1s ease forwards;
                         animation-delay: .5s;
                     }
                 }
@@ -530,6 +529,11 @@
 }
 
 @keyframes listTextAnimation {
+    0% {transform: translateY(-300%);}
+    100% {transform: translateY(0);}
+}
+
+@keyframes coverflowTextAnimation {
     0% {transform: translateY(-300%);}
     100% {transform: translateY(0);}
 }

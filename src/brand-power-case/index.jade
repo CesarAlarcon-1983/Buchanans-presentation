@@ -1,0 +1,70 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../';
+
+block content
+    header.brand-power-case__header
+        .brand-power-case__header__logo-container
+            a.brand-power-case__header__back-arrow(href="/brand-power-principal")
+                img(src="/images/principal/arrow-back.svg")
+            .brand-power-case__header__logo
+                img(src="/images/principal/logo.svg")
+        ul.brand-power-case__header__controls-list
+            li.brand-power-case__header__control Introduction
+            li.brand-power-case__header__control Video
+            li.brand-power-case__header__control Chart 1
+            li.brand-power-case__header__control Chart 2
+
+    main.brand-power-case
+        .brand-power-case__container
+            .brand-power-case__section.brand-power-case__section--introduction
+                .brand-power-case__brand-details
+                    h1.brand-power-case__title Orville achieves a 3 year record dollar volume growth of 28%, with Brand Power.
+                    .brand-power-case__brand-info
+                        .brand-power-case__info-wrapper
+                            .brand-power-case__info-text Brand:
+                            .brand-power-case__info-text.brand-power-case__info-text--white Orville
+                        .brand-power-case__info-wrapper
+                            .brand-power-case__info-text Company: 
+                            .brand-power-case__info-text.brand-power-case__info-text--white Conagra
+                        .brand-power-case__info-wrapper
+                            .brand-power-case__info-text Global Company:
+                            .brand-power-case__info-text.brand-power-case__info-text--white Conagra
+                        .brand-power-case__info-wrapper
+                            .brand-power-case__info-text Category:
+                            .brand-power-case__info-text.brand-power-case__info-text--white Microwaveable Popcorn
+                        .brand-power-case__info-wrapper
+                            .brand-power-case__info-text Platform:
+                            .brand-power-case__info-text.brand-power-case__info-text--white Brand Power
+                        .brand-power-case__info-wrapper
+                            .brand-power-case__info-text Job to be done:
+                            .brand-power-case__info-text.brand-power-case__info-text--white Reassure and substantiate
+                        .brand-power-case__info-wrapper
+                            .brand-power-case__info-text Language:
+                            .brand-power-case__info-text.brand-power-case__info-text--white English
+                .brand-power-case__project-details
+                    .brand-power-case__details-container
+                        h3.brand-power-case__details-text Challenge 
+                        p.brand-power-case__details-text.brand-power-case__details-text--white Amid one of the top 10 fastest declining categories in FMCG according to Nielsen, with a three-year brand sales decline, Orville Redenbacher Microwave Popcorn faced awareness, relevancy, and health perception challenges, as well as a shrinking shelf presence.
+
+                    .brand-power-case__details-container
+                        h3.brand-power-case__details-text Solution
+                        p.brand-power-case__details-text.brand-power-case__details-text--white To address the key barriers, Orville leveraged Brand Power to gain mass awareness and ensure top of mind consideration, while adding credibility to the new health messaging, and to drive fast, measurable sales results.
+
+                    .brand-power-case__details-container
+                        h3.brand-power-case__details-text Results
+                        p.brand-power-case__details-text.brand-power-case__details-text--white The strategic approach to leverage Brand Power in mass market and high reach digital achieved a 3-year record dollar volume growth of 28% and increased dollar share +6pts, while restoring positive growth to the overall microwave popcorn category.
+
+            .brand-power-case__section.brand-power-case__section--video
+                .brand-power-case__video-container
+                    .brand-power-case__video-overlay
+                    iframe(width="100%" height="100%" src="https://www.youtube.com/embed/o7wtLxBhbL8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+            .brand-power-case__section.brand-power-case__section--chart
+                .brand-power-case__chart-container
+                    .brand-power-case__chart-overlay
+                    .brand-power-case__open-button
+                        img(src="#")
+            .brand-power-case__section.brand-power-case__section--chart
+

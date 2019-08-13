@@ -10,6 +10,7 @@ var ViewChanger = function() {
 
     // List View
     listViewButton.on('click', function() {
+        coverflowViewUpdate('clear');
         brandPowerPrincipalContainer.addClass('-list-view');
         brandPowerPrincipalContainer.removeClass('-coverflow-view');
         brandPowerPrincipalContainer.removeClass('-grid-view');
@@ -17,10 +18,10 @@ var ViewChanger = function() {
 
     // Grid View
     gridViewButton.on('click', function() {
+        coverflowViewUpdate('clear');
         brandPowerPrincipalContainer.removeClass('-coverflow-view');
         brandPowerPrincipalContainer.removeClass('-list-view');
         brandPowerPrincipalContainer.addClass('-grid-view');
-
     });
 
     //Coverflow View
@@ -85,6 +86,12 @@ var ViewChanger = function() {
             $(productContainer[0]).addClass('js-tertiary-next js-secondary-next js-primary');
             $(productContainer[1]).addClass('js-tertiary-next js-secondary-next');
             $(productContainer[2]).addClass('js-tertiary-next');
+        }
+
+        if (direction === 'clear') {
+            for(var i = 0 ; i < 6; i++) {
+                productContainer.removeClass(classes[i]);
+            }
         }
     }
     
